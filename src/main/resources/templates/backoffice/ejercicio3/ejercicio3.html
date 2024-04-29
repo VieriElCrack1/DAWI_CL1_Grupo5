@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragment/fragment :: head">
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <nav th:replace="fragment/fragment :: menu"></nav>
+
+    <div class="container mt-3">
+        <div class="d-flex justify-content-center align-item-center">
+            <div class="card col-md-4">
+                <div class="card-header bg-dark text-white">
+                    Ejercicio 3
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Ejercicio 3</h5>
+                    <form th:action="@{/ejercicio3}" th:object="${ejercicio3}" method="post">
+                        <div class="mb-3">
+                            <label class="form-label">Nota 1</label>
+                            <input th:field="*{n1}" type="text" name="n1" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nota 2</label>
+                            <input th:field="*{n2}" type="text" name="n2" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nota 3</label>
+                            <input th:field="*{n3}" type="text" name="n3" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-outline-primary">Consultar</button>
+                        </div>
+                    </form>
+                    <div class="alert alert-primary" th:if="${rs != null}">
+                        <p th:text="${rs}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
